@@ -367,8 +367,8 @@ const insertComponentToDOM = (position, template, placeElem) => {
   placeElem.insertAdjacentHTML(position, template);
 };
 
-const mainControl = document.querySelector(`.main__control`);
 const mainBlock = document.querySelector(`.main`);
+const mainControl = mainBlock.querySelector(`.main__control`);
 
 insertComponentToDOM(`beforeend`, createTopMenuTemplate(), mainControl);
 insertComponentToDOM(`afterend`, createTopFilter(), mainControl);
@@ -379,7 +379,7 @@ const board = document.querySelector(`.board`);
 insertComponentToDOM(`afterbegin`, createBoardFilter(), board);
 insertComponentToDOM(`beforeend`, createBoardTasks(), board);
 
-const boardTasks = document.querySelector(`.board__tasks`);
+const boardTasks = board.querySelector(`.board__tasks`);
 
 insertComponentToDOM(`beforeend`, createEditBoardTask(), boardTasks);
 
